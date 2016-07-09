@@ -2,9 +2,11 @@ const hq = require('hyperquest')
 const js = require('jsonstream')
 const concat = require('concat-stream')
 const AC = require('async-cache')
+
+const HOUR = 1000 * 60 * 10 * 60
 const links = new AC({
   max: 1000,
-  maxAge: 1000 * 60 * 10,
+  maxAge: HOUR,
   load: refresh
 })
 
